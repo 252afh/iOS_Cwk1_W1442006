@@ -9,6 +9,7 @@
 import Foundation
 
 struct Temperature : Codable {
+    // Struct for Temperature information
     var celsius:String
     var fahrenheit:String
     var kelvin:String

@@ -9,6 +9,7 @@
 import Foundation
 
 struct Weight : Codable {
+    // Struct for Weight information
     var kilograms:String
     var grams:String
     var ounces:String

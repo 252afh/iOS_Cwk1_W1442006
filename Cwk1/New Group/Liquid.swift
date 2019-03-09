@@ -9,6 +9,7 @@
 import Foundation
 
 struct Liquid : Codable {
+    // Struct for Liquid information
     var gallons:String
     var litres:String
     var pints:String

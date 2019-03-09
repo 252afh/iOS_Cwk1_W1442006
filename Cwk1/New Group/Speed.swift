@@ -9,6 +9,7 @@
 import Foundation
 
 struct Speed : Codable {
+    // Struct for Speed information
     var ms:String
     var kmh:String
     var mph:String
