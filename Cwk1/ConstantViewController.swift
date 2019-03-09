@@ -17,6 +17,7 @@ UIViewController {
     }
     
     @IBAction func backButtonTapped(_ sender: UIButton){
+        // Returns to the previous page
         dismiss(animated: true, completion: nil)
     }
 }
