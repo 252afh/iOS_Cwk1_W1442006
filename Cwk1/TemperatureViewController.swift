@@ -96,7 +96,7 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate, Keyboard
             }
         }
         else{
-            self.activeField.text? += keyVal
+            self.activeField.text? += character
         }
         
         // Handles which field the value was entered in
