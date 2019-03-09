@@ -2,7 +2,7 @@
 //  Keyboard.swift
 //  Cwk1
 //
-//  Created by user149138 on 3/5/19.
+//  Created by stackoverflow user on 3/5/19.
 //  Copyright © 2019 user149138. All rights reserved.
 //
 
@@ -11,6 +11,8 @@ import UIKit
 protocol KeyboardDelegate: class {
     func keyWasTapped(character: String)
 }
+
+// This code was taken from a stackoverflow post about custom keyboards
 
 extension UIViewController
 {
@@ -68,6 +70,7 @@ class Keyboard: UIView {
     }
     
     func enableNegateButton() {
+        // Enables the positive/negative button on the temperature view
         negateButton.isEnabled = true
         negateButton.backgroundColor = #colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)
         negateButton.setTitleColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), for: .normal)
