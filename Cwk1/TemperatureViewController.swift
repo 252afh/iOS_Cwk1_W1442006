@@ -78,16 +78,16 @@ class TemperatureViewController: UIViewController, UITextFieldDelegate, Keyboard
     
     func keyWasTapped(character: String) {
         // Handles which key was tapped
-        if (keyVal == "del"){
+        if (character == "del"){
             self.activeField.text = String(self.activeField.text?.dropLast() ?? "")
         }
-        else if (keyVal == "."){
+        else if (character == "."){
             if (self.activeField.text?.count ?? 0 > 0 &&
                 self.activeField.text?.contains(".") == false){
                 self.activeField.text? += "."
             }
         }
-        else if (keyVal == "neg/pos"){
+        else if (character == "neg/pos"){
             if (self.activeField.text?.starts(with: "-") ?? false){
                 self.activeField.text? = String(self.activeField.text?.dropFirst() ?? "")
             }
