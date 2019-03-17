@@ -112,18 +112,27 @@ class WeightViewController: UIViewController, UITextFieldDelegate, KeyboardDeleg
     
     func calcFromStonePounds() {
         // Calculate amounts from entered pounds or stones
-        let stones = Double(stoneTextField.text ?? "0.0") ?? 0.0 + (Double(stonePoundTextField.text ?? "0.0") ?? 0.0/14)
-        let kilograms = String(format: "%.4f", (stones*6.35))
-        let grams = String(format: "%.4f", (stones*6350.293))
-        let ounces = String(format: "%.4f", (stones*224))
-        let pounds = String(format: "%.4f", (stones*14))
+        let stones = Double(stoneTextField.text ?? "0.0") ?? 0.0
+        let stonesFromPounds = ((Double(stonePoundTextField.text ?? "0.0") ?? 0.0)/14)
+        let stonesAndPounds = stones + stonesFromPounds
+        let kilograms = String(format: "%.4f", (stonesAndPounds*6.35))
+        let grams = String(format: "%.4f", (stonesAndPounds*6350.293))
+        let ounces = String(format: "%.4f", (stonesAndPounds*224))
+        let pounds = String(format: "%.4f", (stonesAndPounds*14))
         
         setTextFields(stones: (stoneTextField.text ?? "0.0"), kilograms: kilograms, grams: grams, ounces: ounces, pounds: pounds, stonePounds: (stonePoundTextField.text ?? "0.0"))
     }
     
     func setTextFields(stones:String, kilograms:String, grams:String, ounces:String, pounds:String, stonePounds:String){
         // Sets values to corresponding text fields
-        stoneTextField.text = stones
+        
+        if (stones.count == 0){
+            stoneTextField.text = "0"
+        }
+        else{
+            stoneTextField.text = stones
+        }
+        
         kilogramTextField.text = kilograms
         gramTextField.text = grams
         ounceTextField.text = ounces
